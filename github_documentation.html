@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Git and GitHub Workshop Documentation</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/4.0.0/github-markdown.min.css">
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <a href="https://github.com/" target=" ">
+            <img src="images/logo.png" alt="Logo" class="logo">
+            </a>
+            <ul>
+                <li><a href="#installation"><i class="fas fa-download"></i> Installation</a></li>
+                <li><a href="#signup"><i class="fas fa-user-plus"></i> Sign Up or Sign In</a></li>
+                <li><a href="#setup"><i class="fas fa-cogs"></i> Setup in Windows</a></li>
+                <li><a href="#commands"><i class="fas fa-terminal"></i> Basic Commands</a></li>
+                <li><a href="#branch"><i class="fas fa-code-branch"></i> Branch & Merge</a></li>
+                <li><a href="#share"><i class="fas fa-share-alt"></i> Share & Update</a></li>
+            </ul>
+        </nav>
+        <main class="markdown-body">
+            <h2 id="installation">1. Installation:</h2>
+            <h3>Git for Windows</h3>
+            <ol>
+                <li>To download the Git installer, visit the Git's official site and go to the <a href="https://git-scm.com/downloads">download page</a>.</li>
+                <div class="image-placeholder"> <!-- Image placeholder -->
+                    <img src="images/image1.png" alt="Download Git Installer">
+                </div>
+                <li>Click on the downloaded installer file and select yes to continue. The installation begins.</li>
+                <div class="image-placeholder">
+                    <img src="images/image2.png" alt="Installation Begins">
+                </div>
+                <li>Default components are automatically selected in this step. You can also choose your required part.</li>
+                <div class="image-placeholder">
+                    <img src="images/image3.png" alt="Default Components">
+                </div>
+                <li>The default Git command-line options are selected automatically. You can choose your preferred choice. Click next to continue.</li>
+                <div class="image-placeholder">
+                    <img src="images/image4.png" alt="Command-Line Options">
+                </div>
+                <li>The default transport backend options are selected in this step. Click next to continue.</li>
+                <div class="image-placeholder">
+                    <img src="images/image5.png" alt="Transport Backend Options">
+                </div>
+                <li>Select your required line ending option and click next to continue.</li>
+                <div class="image-placeholder">
+                    <img src="images/image6.png" alt="Line Ending Option">
+                </div>
+                <li>Select preferred terminal emulator and click next to continue.</li>
+                <div class="image-placeholder">
+                    <img src="images/image7.png" alt="Terminal Emulator">
+                </div>
+                <li>This is the last step that provides some extra features like system caching, credential management, and symbolic link. Select the required features and click next.</li>
+                <div class="image-placeholder">
+                    <img src="images/image8.png" alt="Extra Features">
+                </div>
+                <li>The files are being extracted.</li>
+                <div class="image-placeholder">
+                    <img src="images/image9.png" alt="Files Extraction">
+                </div>
+                <p>The Git Bash looks like as</p>
+                <div class="image-placeholder">
+                    <img src="images/image10.png" alt="Files Extraction">
+                </div>
+                
+            </ol>
+
+            <h3>Git for Linux (Ubuntu)</h3>
+            <ol>
+                <li>Start the general OS and package update:
+                    <div class="code-block">
+                        <pre>$ sudo apt-get update</pre>
+                    </div>
+                </li>
+                <li>Install Git:
+                    <div class="code-block">
+                        <pre>$ sudo apt-get install git-core</pre>
+                    </div>
+                </li>
+
+                <li>Confirm Git installation:
+                    <div class="code-block">
+                        <pre>$ sudo git --version</pre>
+                    </div>
+                </li>
+                <li>Configure Git for the first use:
+                    <div class="code-block">
+                        <pre>$ sudo git config --global user.name "Harsh"
+$ sudo git config --global user.email "Harsh@xyz"</pre>
+                    </div>
+                </li>
+            </ol>
+
+            <h2 id="signup">2. Sign Up or Sign In in GitHub account</h2>
+            <h3>Step 1: Creating an account</h3>
+            <p>To sign up for an account on GitHub.com, navigate to <a href="https://github.com/">GitHub</a> and follow the prompts. For more information, see <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-strong-password">Creating a strong password</a>.</p>
+            <p>For Sign Up</p>
+            <div class="image-placeholder">
+                <img src="images/image11.png" alt="Sign Up">
+            </div>
+            <p>For Sign In</p>
+            <div class="image-placeholder">
+                <img src="images/image12.png" alt="Sign Up">
+            </div>
+            <h3>Step 2: Configuring two-factor authentication using a TOTP app</h3>
+            <ol>
+                <li>Download a TOTP app of your choice to your phone or desktop.</li>
+                <li>In the upper-right corner of any page on GitHub, click your profile photo, then click Settings.</li>
+                <li>In the "Access" section of the sidebar, click Password and authentication.</li>
+                <li>In the "Two-factor authentication" section of the page, click Enable two-factor authentication.</li>
+                <li>Under "Scan the QR code", do one of the following:
+                    <ul>
+                        <li>Scan the QR code with your mobile device's app. After scanning, the app displays a six-digit code that you can enter on GitHub Enterprise Server.</li>
+                        <li>If you can't scan the QR code, click the setup key to see a code, the TOTP secret, that you can manually enter in your TOTP app instead.</li>
+                    </ul>
+                </li>
+                <div class="image-placeholder">
+                    <img src="images/image13.png" alt="Scan QR Code">
+                </div>
+                <li>The TOTP application saves your account on your GitHub Enterprise Server instance and generates a new authentication code every few seconds. On GitHub Enterprise Server, type the code into the field under "Verify the code from the app".</li>
+                <li>Under "Save your recovery codes", click Download to download your recovery codes to your device. Save them to a secure location.</li>
+                <li>After saving your two-factor recovery codes, click I have saved my recovery codes to enable two-factor authentication for your account.</li>
+                <li>Optionally, configure additional 2FA methods to reduce your risk of account lockout. For more details, see <a href="https://docs.github.com/en/enterprise-server@3.10/authentication/securing-your-account-with-two-factor-authentication-2fa/configuring-two-factor-authentication-using-a-security-key">Configuring two-factor authentication using a security key</a>.</li>
+            </ol>
+
+            <h2 id="setup">3. Setup in Windows</h2>
+            <ul>
+                <li>Set Global Username:
+                    <div class="code-block">
+                        <pre>$ git config --global user.name "Harsh Shah"</pre>
+                    </div>
+                </li>
+
+                <li>Set Global Email:
+                    <div class="code-block">
+                        <pre>$ git config --global user.email "harsh@xyz.com"</pre>
+                    </div>
+                </li>
+                <li>Get Global Settings:
+                    <div class="code-block">
+                        <pre>$ git config --list</pre>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 id="commands">4. Basic Git Commands:</h2>
+            <ul>
+                <li>Git Configuration:
+                    <div class="code-block">
+                        <pre>$ git config --global user.name "Harsh"
+$ git config --global user.email "Harsh@xyz"</pre>
+                    </div>
+                </li>
+                <li>Initialize Git in the Project Folder:
+                    <div class="code-block">
+                        <pre>$ git init</pre>
+                    </div>
+                </li>
+                <li>Add Files:
+                    <div class="code-block">
+                        <pre>$ git add [file name]</pre>
+                    </div>
+                </li>
+                <li>Commit Files:
+                    <div class="code-block">
+                        <pre>$ git commit -m "Message"</pre>
+                    </div>
+                </li>
+                <li>Push to Remote Repository:
+                    <div class="code-block">
+                        <pre>$ git push</pre>
+                    </div>
+                </li>
+                <li>Clone Repository:
+                    <div class="code-block">
+                        <pre>$ git clone [link]</pre>
+                    </div>
+                </li>
+                <li>Check Status:
+                    <div class="code-block">
+                        <pre>$ git status</pre>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 id="branch">5. Branch & Merge:</h2>
+            <ul>
+                <li>List All Branches:
+                    <div class="code-block">
+                        <pre>$ git branch</pre>
+                    </div>
+                </li>
+                <li>Create New Branch:
+                    <div class="code-block">
+                        <pre>$ git branch [branch name]</pre>
+                    </div>
+                </li>
+                <li>Switch to New Branch:
+                    <div class="code-block">
+                        <pre>$ git checkout [branch name]</pre>
+                    </div>
+                </li>
+                <li>Merge Branch to Master:
+                    <div class="code-block">
+                        <pre>$ git merge [alias]/[branch]</pre>
+                    </div>
+                </li>
+                <li>Show Commit History:
+                    <div class="code-block">
+                        <pre>$ git log</pre>
+                    </div>
+                </li>
+            </ul>
+
+            <h2 id="share">6. Share & Update:</h2>
+            <ul>
+                <li>Push Local Branch to Remote Repository:
+                    <div class="code-block">
+                        <pre>$ git push [alias] [branch]</pre>
+                    </div>
+                </li>
+                <li>Pull Changes from Remote Repository:
+                    <div class="code-block">
+                        <pre>$ git pull</pre>
+                    </div>
+                </li>
+                <li>Add a Remote Repository:
+                    <div class="code-block">
+                        <pre>$ git remote add [alias] [url]</pre>
+                    </div>
+                </li>
+                <li>Fetch Changes from a Remote Repository:
+                    <div class="code-block">
+                        <pre>$ git fetch [alias]</pre>
+                    </div>
+                </li>
+                <li>PMerge Remote Branch into Current Branch:
+                    <div class="code-block">
+                        <pre>$ git merge [alias]/[branch]</pre>
+                    </div>
+                </li>
+            </ul>
+        </main>
+    </div>
+</body>
+</html>
